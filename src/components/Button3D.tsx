@@ -60,7 +60,6 @@ function ButtonMesh({ text, onClick, color = "#c5a059", width = 2 }: Button3DPro
         color="white"
         anchorX="center"
         anchorY="middle"
-        font="https://fonts.gstatic.com/s/notosanskr/v27/Plya4zHs6mve979H85E92FT3m256.woff"
       >
         {text}
       </Text>

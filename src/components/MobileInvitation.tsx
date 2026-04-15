@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Heart, MapPin, Calendar, Clock, Phone, Share2, MessageSquare, Gift, ChevronRight } from 'lucide-react';
 import ThreeScene from './ThreeScene';
 import Button3D from './Button3D';
+import EmotionalCouple from './EmotionalCouple';
 import { cn } from '@/src/lib/utils';
 import confetti from 'canvas-confetti';
 
@@ -90,6 +91,7 @@ export default function MobileInvitation() {
             <div className="aspect-video bg-luxury-gold/5 rounded-2xl flex items-center justify-center border border-luxury-gold/10">
               <span className="text-4xl animate-bounce">📍</span>
             </div>
+            <EmotionalCouple />
             <div className="grid grid-cols-2 gap-3">
               <Button3D text="전화하기" width={1.5} onClick={() => alert('전화 연결')} />
               <Button3D text="지도보기" width={1.5} onClick={() => alert('지도 열기')} />

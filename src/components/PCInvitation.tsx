@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Heart, MapPin, Calendar, Clock, MessageSquare, Gift, Share2, Music } from 'lucide-react';
 import ThreeScene from './ThreeScene';
 import Button3D from './Button3D';
+import EmotionalCouple from './EmotionalCouple';
 import confetti from 'canvas-confetti';
 
 export default function PCInvitation() {
@@ -123,6 +124,7 @@ export default function PCInvitation() {
               <div className="text-9xl group-hover:scale-110 transition-transform duration-1000">📍</div>
               <div className="absolute inset-0 bg-gradient-to-t from-luxury-gold/20 to-transparent" />
             </div>
+            <EmotionalCouple />
             <div className="grid grid-cols-2 gap-6">
               <Button3D text="CALL VENUE" onClick={() => alert('Calling...')} />
               <Button3D text="GOOGLE MAPS" onClick={() => alert('Opening Maps...')} />

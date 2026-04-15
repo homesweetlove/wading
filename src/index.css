@@ -6,15 +6,19 @@
   --font-display: "Playfair Display", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-luxury-bg: #f5f2ed;
-  --color-luxury-gold: #c5a059;
+  --color-luxury-bg: #f8f6f2;
+  --color-luxury-gold: #b89352;
+  --color-luxury-gold-light: #d4af37;
   --color-luxury-ink: #1a1a1a;
-  --color-luxury-muted: #8e8e8e;
+  --color-luxury-muted: #a0a0a0;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-luxury-bg text-luxury-ink font-sans antialiased overflow-x-hidden;
+    @apply bg-luxury-bg text-luxury-ink font-sans antialiased overflow-x-hidden selection:bg-luxury-gold/30;
   }
 }
 
