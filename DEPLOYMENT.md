@@ -1,24 +1,33 @@
 # Vercel Deployment Guide
 
-이 프로젝트는 Vercel을 통해 배포하도록 최적화되어 있습니다.
+이 프로젝트는 Vite 정적 앱으로 배포합니다.
 
-## 배포 방법
+## 기본 설정
 
-1. **GitHub 저장소 생성**: GitHub에 새 저장소를 만듭니다.
-2. **코드 푸시**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial wedding invitation"
-   git remote add origin <your-github-repo-url>
-   git push -u origin main
-   ```
-3. **Vercel 연결**:
-   - [Vercel Dashboard](https://vercel.com/dashboard)로 이동합니다.
-   - **Add New...** -> **Project**를 클릭합니다.
-   - GitHub 저장소를 가져옵니다(Import).
-   - Framework Preset은 **Vite**로 자동 감지됩니다.
-   - **Deploy**를 클릭합니다.
+Vercel에서 GitHub 저장소 `homesweetlove/wading`을 Import한 뒤 다음 값을 사용합니다.
 
-## 환경 변수
-만약 Gemini API 기능을 서버에서 사용한다면 Vercel 프로젝트 설정의 **Environment Variables** 탭에 `GEMINI_API_KEY`를 추가해야 합니다.
+```text
+Framework Preset: Vite
+Build Command: npm run build
+Output Directory: dist
+```
+
+현재 앱은 별도의 API 키나 환경변수를 요구하지 않습니다.
+
+## 자동 배포
+
+Vercel Git Integration이 연결되어 있으면 `main` 브랜치에 push될 때 새 Production Deployment가 자동 생성됩니다.
+
+## SPA routing
+
+`vercel.json`에서 실제 정적 asset은 정상적으로 제공하고, 애플리케이션 경로는 `index.html`로 fallback하도록 설정합니다.
+
+## 배포 전 확인
+
+```bash
+npm ci
+npm run lint
+npm run build
+```
+
+세 명령이 모두 성공한 뒤 배포하는 것을 권장합니다.
