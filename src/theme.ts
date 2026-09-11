@@ -1,9 +1,4 @@
-export type ThemeId =
-  | 'ivory-gold'
-  | 'rose-champagne'
-  | 'sage-garden'
-  | 'sky-porcelain'
-  | 'lavender-dusk';
+export type ThemeId = 'paper-letter' | 'garden-film' | 'midnight-ceremony';
 
 export interface WeddingTheme {
   id: ThemeId;
@@ -13,43 +8,29 @@ export interface WeddingTheme {
   swatches: [string, string, string];
 }
 
-export const DEFAULT_THEME: ThemeId = 'ivory-gold';
+export const DEFAULT_THEME: ThemeId = 'paper-letter';
 
 export const WEDDING_THEMES: WeddingTheme[] = [
   {
-    id: 'ivory-gold',
-    name: 'Ivory Gold',
-    subtitle: 'Classic / Luxury',
-    description: '기존 디자인을 살린 따뜻한 아이보리와 샴페인 골드 조합입니다.',
-    swatches: ['#f8f6f2', '#b89352', '#1a1a1a'],
+    id: 'paper-letter',
+    name: 'Paper Letter',
+    subtitle: 'Editorial / Intimate',
+    description: '여백이 많은 종이 초대장처럼 차분하고 정제된 편지형 구성입니다.',
+    swatches: ['#f4efe6', '#8c6a45', '#23201c'],
   },
   {
-    id: 'rose-champagne',
-    name: 'Rose Champagne',
-    subtitle: 'Romantic / Soft',
-    description: '로즈 핑크와 샴페인 톤의 부드럽고 로맨틱한 테마입니다.',
-    swatches: ['#fff7f5', '#b76e79', '#39282c'],
+    id: 'garden-film',
+    name: 'Garden Film',
+    subtitle: 'Natural / Cinematic',
+    description: '세이지와 필름 프레임을 사용한 야외 웨딩·스냅 앨범형 구성입니다.',
+    swatches: ['#e8eadf', '#6d8065', '#263126'],
   },
   {
-    id: 'sage-garden',
-    name: 'Sage Garden',
-    subtitle: 'Natural / Calm',
-    description: '세이지 그린과 크림 톤을 사용한 차분한 가든 웨딩 테마입니다.',
-    swatches: ['#f5f7f1', '#71856d', '#253128'],
-  },
-  {
-    id: 'sky-porcelain',
-    name: 'Sky Porcelain',
-    subtitle: 'Clean / Modern',
-    description: '도자기처럼 깨끗한 배경과 차분한 블루 포인트의 현대적인 테마입니다.',
-    swatches: ['#f3f7fa', '#6f8fa8', '#1f2d38'],
-  },
-  {
-    id: 'lavender-dusk',
-    name: 'Lavender Dusk',
-    subtitle: 'Dreamy / Elegant',
-    description: '옅은 라벤더와 보랏빛 포인트를 사용한 몽환적이고 우아한 테마입니다.',
-    swatches: ['#f8f5fb', '#8b739e', '#302a35'],
+    id: 'midnight-ceremony',
+    name: 'Midnight Ceremony',
+    subtitle: 'Night / Dramatic',
+    description: '짙은 밤색 배경과 타이포그래피 중심의 야간 예식 포스터형 구성입니다.',
+    swatches: ['#11141b', '#d2b474', '#f0eadf'],
   },
 ];
 
