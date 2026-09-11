@@ -3,9 +3,9 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
-function ParticleField({ count = 1500 }) {
+function ParticleField({ count = 1500, color }: { count?: number; color: string }) {
   const pointsRef = useRef<THREE.Points>(null);
-  
+
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -27,7 +27,7 @@ function ParticleField({ count = 1500 }) {
     <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color="#c5a059"
+        color={color}
         size={0.015}
         sizeAttenuation={true}
         depthWrite={false}
@@ -37,16 +37,14 @@ function ParticleField({ count = 1500 }) {
   );
 }
 
-export default function Background3D() {
+export default function Background3D({ accentColor = '#b89352' }: { accentColor?: string }) {
   return (
-    <div className="fixed inset-0 -z-10 pointer-events-none bg-[#f5f2ed]">
+    <div className="fixed inset-0 -z-10 pointer-events-none bg-luxury-bg">
       <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-        <ParticleField />
-        {/* Subtle gradient light */}
+        <ParticleField color={accentColor} />
         <ambientLight intensity={0.2} />
-        <pointLight position={[10, 10, 10]} intensity={0.5} color="#c5a059" />
+        <pointLight position={[10, 10, 10]} intensity={0.5} color={accentColor} />
       </Canvas>
-      {/* Overlay gradient for better text readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-luxury-bg/50 to-luxury-bg" />
     </div>
   );
