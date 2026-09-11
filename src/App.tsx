@@ -10,7 +10,8 @@ import MobileInvitation from './components/MobileInvitation';
 import Background3D from './components/Background3D';
 import ErrorBoundary from './components/ErrorBoundary';
 import ThemePicker from './components/ThemePicker';
-import { DEFAULT_THEME, isThemeId, ThemeId } from './theme';
+import { DEFAULT_THEME, isThemeId, WEDDING_THEMES } from './theme';
+import type { ThemeId } from './theme';
 
 const THEME_STORAGE_KEY = 'wading_wedding_theme';
 
@@ -29,6 +30,9 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState<ThemeId>(getInitialTheme);
+
+  const selectedTheme = WEDDING_THEMES.find((item) => item.id === theme) ?? WEDDING_THEMES[0];
+  const accentColor = selectedTheme.swatches[1];
 
   useEffect(() => {
     const checkMobile = () => {
@@ -86,9 +90,13 @@ export default function App() {
       </AnimatePresence>
 
       <main className="min-h-screen relative theme-transition">
-        <Background3D />
+        <Background3D accentColor={accentColor} />
         <ThemePicker value={theme} onChange={setTheme} />
-        {isMobile ? <MobileInvitation /> : <PCInvitation />}
+        {isMobile ? (
+          <MobileInvitation accentColor={accentColor} />
+        ) : (
+          <PCInvitation accentColor={accentColor} />
+        )}
       </main>
     </ErrorBoundary>
   );
