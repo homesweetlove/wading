@@ -1,117 +1,60 @@
-# Wading — 3D Wedding Invitation
+# Wading — Wedding Invitation Experiences
 
-React + Three.js 기반의 **반응형 3D 웨딩 청첩장 웹앱**입니다.
+`wading`은 React + TypeScript + Vite로 만든 **반응형 디지털 웨딩 청첩장**입니다.
 
-PC와 모바일 화면을 각각 최적화해서 보여주고, 3D 웨딩 오브젝트와 파티클 효과, D-Day 카운터, 오시는 길, 방명록, 계좌 안내 등 디지털 청첩장에 필요한 화면을 한 페이지에 구성합니다.
+기존의 3D 오브젝트 중심 화면을 걷어내고, 단순히 색상만 바뀌는 스킨이 아니라 **레이아웃·타이포그래피·애니메이션이 각각 다른 웨딩 경험**을 선택할 수 있도록 다시 구성했습니다.
 
-현재 샘플 데이터는 `Jihoon & Minji`, `2026.10.24`, `Grand Hyatt Seoul`을 기준으로 들어가 있으며 실제 사용 시 코드에서 이름·날짜·장소·계좌정보 등을 교체하면 됩니다.
+현재 샘플 정보는 `Jihoon & Minji`, `2026.10.24`, `그랜드 하얏트 서울` 기준입니다.
+
+---
+
+## 현재 테마
+
+### 1. Paper Letter
+
+정적인 종이 초대장과 편지를 모티브로 한 가장 차분한 테마입니다.
+
+- 넓은 여백과 세리프 타이포그래피
+- 편지형 초대 문구
+- 날짜 / 장소를 인쇄물처럼 정리
+- 절제된 fade / reveal 애니메이션
+- 아이보리 / 브라운 계열
+
+### 2. Garden Film
+
+야외 웨딩 스냅과 필름 앨범을 모티브로 한 테마입니다.
+
+- 세이지 그린 기반
+- 필름·폴라로이드 프레임 구조
+- 비대칭 히어로 레이아웃
+- 스크롤 시 프레임이 각기 다른 방향에서 등장
+- 날짜와 장소를 카드형으로 분리
+
+### 3. Midnight Ceremony
+
+야간 예식 포스터를 모티브로 한 가장 드라마틱한 테마입니다.
+
+- 딥 네이비 / 골드
+- 초대형 웨딩 타이포그래피
+- 라인 reveal과 어두운 무대형 레이아웃
+- 날짜 / 장소를 이벤트 포스터처럼 표현
+- 데스크톱과 모바일 모두 강한 대비 유지
+
+우측 하단의 테마 버튼에서 세 디자인을 바로 전환할 수 있습니다.
+선택한 테마는 `localStorage`에 저장되어 재접속해도 유지됩니다.
 
 ---
 
 ## 주요 기능
 
-### 반응형 청첩장
-
-- 데스크톱 전용 레이아웃
-- 모바일 전용 레이아웃
-- 화면 너비에 따라 자동 전환
-- 웨딩 정보 / 초대 문구 / 오시는 길 / 방명록 / 계좌 안내 구성
-
-### 3D 연출
-
-`@react-three/fiber`, `@react-three/drei`, `three`를 이용합니다.
-
-- 3D 웨딩 케이크
-- 웨딩 링 오브젝트
-- 파티클 배경
-- 떨어지는 컨페티
-- 조명 / 환경광 / 그림자
-- 부드러운 애니메이션
-
-### D-Day
-
-결혼식 날짜까지 남은 시간을 실시간으로 계산합니다.
-
-- Days
-- Hours
-- Minutes
-- Seconds
-
-현재 기준 날짜는 코드 안에 다음과 같이 설정되어 있습니다.
-
-```ts
-2026-10-24T12:30:00
-```
-
-### 방명록 UI
-
-이름과 축하 메시지를 입력해 화면에 추가할 수 있습니다.
-
-> 현재 방명록은 서버나 데이터베이스에 저장되지 않습니다. 새로고침하면 입력된 메시지는 사라집니다.
-
-### 계좌 안내
-
-신랑/신부 계좌정보를 보여주고 클립보드 복사 UI를 제공합니다.
-
-> 저장소에 들어 있는 이름과 계좌번호는 샘플 값입니다. 실제 배포 전 반드시 교체하세요.
-
----
-
-## 테마 선택
-
-우측 상단의 **THEME** 버튼을 누르면 청첩장의 분위기를 실시간으로 비교하고 선택할 수 있습니다.
-
-현재 5개의 테마가 포함되어 있습니다.
-
-| Theme | 분위기 |
-|---|---|
-| **Ivory Gold** | 클래식 / 럭셔리 |
-| **Rose Champagne** | 로맨틱 / 소프트 |
-| **Sage Garden** | 내추럴 / 가든 |
-| **Sky Porcelain** | 모던 / 클린 |
-| **Lavender Dusk** | 몽환적 / 우아함 |
-
-테마 카드를 선택하면 배경, 텍스트, 포인트 컬러, 카드 테두리, 3D 배경 파티클 등이 즉시 변경됩니다.
-
-선택한 테마는 브라우저 `localStorage`에 저장되기 때문에 같은 브라우저로 다시 접속했을 때 마지막으로 선택한 테마가 유지됩니다.
-
-### 테마 추가하기
-
-새로운 테마를 추가하려면 다음 두 영역을 수정하면 됩니다.
-
-```text
-src/theme.ts
-src/index.css
-```
-
-`src/theme.ts`에는 테마 이름과 미리보기 컬러를 추가하고, `src/index.css`에는 해당 `data-theme`의 CSS 변수를 정의하면 됩니다.
-
----
-
-## 기술 스택
-
-### Frontend
-
-- React 19
-- TypeScript
-- Vite
-- Tailwind CSS 4
-- Motion
-- Lucide React
-
-### 3D
-
-- Three.js
-- React Three Fiber
-- React Three Drei
-
-### Effects
-
-- canvas-confetti
-
-### Deployment
-
-- Vercel 설정 포함
+- PC / 태블릿 / 모바일 반응형 레이아웃
+- 서로 다른 3가지 웨딩 디자인 경험
+- D-Day 실시간 카운트다운
+- 예식 날짜 / 시간 / 장소 안내
+- 네이버 지도 검색 연결
+- 신랑 / 신부 계좌번호 복사
+- 테마 선택값 브라우저 저장
+- Motion 기반 화면 전환 및 스크롤 애니메이션
 
 ---
 
@@ -120,83 +63,53 @@ src/index.css
 ```text
 wading/
 ├─ src/
-│  ├─ components/
-│  │  ├─ Background3D.tsx      # 3D 파티클 배경
-│  │  ├─ Button3D.tsx          # 3D 스타일 버튼
-│  │  ├─ EmotionalCouple.tsx   # 커플 연출 컴포넌트
-│  │  ├─ ErrorBoundary.tsx     # 렌더링 오류 처리
-│  │  ├─ InvitationContent.tsx # 청첩장 콘텐츠 구성
-│  │  ├─ MobileInvitation.tsx  # 모바일 레이아웃
-│  │  ├─ PCInvitation.tsx      # 데스크톱 레이아웃
-│  │  ├─ ThemePicker.tsx       # 테마 미리보기 / 선택 UI
-│  │  └─ ThreeScene.tsx        # 웨딩 케이크 / 링 3D 씬
-│  ├─ lib/
-│  │  └─ utils.ts
-│  ├─ App.tsx                  # 반응형 분기 + 테마 상태
-│  ├─ theme.ts                 # 테마 목록
-│  ├─ index.css                # 테마 컬러 및 공통 스타일
-│  └─ main.tsx
-├─ DEPLOYMENT.md
+│  ├─ App.tsx
+│  ├─ main.tsx
+│  ├─ index.css
+│  ├─ theme.ts
+│  └─ components/
+│     ├─ WeddingExperience.tsx   # 3가지 웨딩 레이아웃
+│     ├─ ThemePicker.tsx         # 테마 미리보기 / 선택
+│     └─ ErrorBoundary.tsx
 ├─ index.html
-├─ package.json
-├─ tsconfig.json
+├─ vite.config.ts
 ├─ vercel.json
-└─ vite.config.ts
+├─ package.json
+└─ README.md
 ```
+
+기존 3D 관련 컴포넌트는 더 이상 메인 화면에서 사용하지 않습니다.
 
 ---
 
-## 설치 및 실행
+## 실행
 
-### 요구사항
-
-- Node.js 18 이상 권장
-- npm
-
-### 1. 저장소 Clone
-
-```bash
-git clone https://github.com/homesweetlove/wading.git
-cd wading
-```
-
-### 2. 의존성 설치
+Node.js 20 이상을 권장합니다.
 
 ```bash
 npm install
-```
-
-### 3. 개발 서버 실행
-
-```bash
 npm run dev
 ```
 
-현재 Vite 개발 서버는 기본적으로 `3000` 포트를 사용하도록 설정되어 있습니다.
+기본 개발 서버는 다음 주소에서 확인할 수 있습니다.
 
 ```text
 http://localhost:3000
 ```
 
-### 4. TypeScript 검사
+### 타입 검사
 
 ```bash
 npm run lint
 ```
 
-이 프로젝트의 `lint` 스크립트는 ESLint가 아니라 다음 명령을 실행합니다.
-
-```bash
-tsc --noEmit
-```
-
-### 5. 프로덕션 빌드
+### 프로덕션 빌드
 
 ```bash
 npm run build
 ```
 
-### 6. 빌드 결과 미리보기
+### 빌드 미리보기
 
 ```bash
 npm run preview
@@ -204,96 +117,94 @@ npm run preview
 
 ---
 
-## 청첩장 정보 수정
+## 웨딩 정보 수정
 
-현재 청첩장 데이터는 별도의 관리자 페이지나 CMS가 아니라 컴포넌트 코드 안에 들어 있습니다.
+현재 샘플 웨딩 정보는 `src/components/WeddingExperience.tsx` 상단의 `wedding` 객체에 모여 있습니다.
 
-주요 수정 대상은 다음과 같습니다.
-
-```text
-src/components/PCInvitation.tsx
-src/components/MobileInvitation.tsx
-src/components/InvitationContent.tsx
+```ts
+const wedding = {
+  groom: 'Jihoon',
+  bride: 'Minji',
+  date: new Date('2026-10-24T12:30:00+09:00'),
+  venue: '그랜드 하얏트 서울',
+  hall: 'Grand Ballroom',
+  address: '서울특별시 용산구 소월로 322',
+  // ...
+};
 ```
 
-### 수정할 항목 예시
+실제 사용 시 이 객체에서 다음 내용을 변경하면 됩니다.
 
 - 신랑 / 신부 이름
-- 결혼식 날짜 및 시간
-- 예식장 이름
-- 예식장 주소
+- 결혼식 날짜와 시간
+- 예식장 및 홀 이름
+- 주소
 - 초대 문구
-- 신랑 / 신부 계좌번호
-- 은행명
-- D-Day 기준 날짜
-
-실제 서비스로 사용할 계획이라면 이 값들을 하나의 설정 파일로 분리하는 것을 권장합니다.
+- 계좌정보
 
 ---
 
-## 현재 구현 범위와 한계
+## 테마 추가
 
-이 저장소는 현재 **프론트엔드 중심의 인터랙티브 청첩장**입니다.
+테마 메타 정보는 `src/theme.ts`에 있습니다.
 
-아직 다음 기능은 실제 서비스와 연결되어 있지 않습니다.
+새로운 디자인을 추가하려면:
 
-- 방명록 서버 저장
-- 관리자 로그인
-- 초대장 정보 관리자 페이지
-- 사진 업로드
-- 실제 지도 API
-- 실제 전화/지도 연결 일부
-- 음악 재생 관리
-- 참석 여부(RSVP) 서버 저장
-- 문자/카카오 공유 서버 기능
+1. `ThemeId`에 새 ID 추가
+2. `WEDDING_THEMES`에 미리보기 정보 추가
+3. `WeddingExperience.tsx`에 새로운 레이아웃 컴포넌트 작성
+4. `WeddingExperience`의 theme 분기에 연결
+5. `index.css`에 해당 테마 전용 스타일 추가
 
-따라서 현재 방명록이나 일부 버튼은 UI 데모 성격이 있습니다.
+즉, 이 프로젝트의 테마는 **색상 토큰만 갈아끼우는 방식이 아니라 화면 구조 자체를 교체하는 방식**입니다.
 
 ---
 
-## 환경 변수
+## Google AI Studio 관련
 
-현재 청첩장 화면 자체를 실행하는 데 **Gemini API 키는 필요하지 않습니다.**
+현재 앱은 Gemini 또는 Google AI API를 사용하지 않습니다.
 
-저장소에는 AI Studio에서 생성된 초기 설정 흔적으로 `GEMINI_API_KEY` 관련 항목과 `@google/genai` 의존성이 남아 있지만, 현재 청첩장 UI 코드에서는 Gemini API를 호출하지 않습니다.
+초기 생성 프로젝트에 남아 있던 `My Google AI Studio App` 문서 제목, `GEMINI_API_KEY` Vite 주입 설정, AI Studio용 `.env.example`, `metadata.json`은 제거했습니다.
 
-향후 AI 기능을 추가하지 않는다면 해당 설정과 의존성은 정리해도 됩니다.
+청첩장 실행에 별도의 AI API 키나 환경변수는 필요하지 않습니다.
 
 ---
 
 ## 배포
 
-Vercel 설정 파일(`vercel.json`)이 포함되어 있습니다.
+Vercel 기준:
 
-일반적인 배포 순서는 다음과 같습니다.
+- Framework: `Vite`
+- Build Command: `npm run build`
+- Output Directory: `dist`
 
-1. GitHub 저장소를 Vercel에 연결
-2. Framework Preset을 Vite로 선택
-3. Build Command: `npm run build`
-4. Deploy
+`main`에 push하면 연결된 Vercel 프로젝트에서 자동 배포하도록 사용할 수 있습니다.
 
-자세한 내용은 [`DEPLOYMENT.md`](./DEPLOYMENT.md)를 참고하세요.
-
----
-
-## 다음 업그레이드 아이디어
-
-- 이름/날짜/장소/계좌를 한 파일에서 관리하는 `wedding.config.ts`
-- 사진 갤러리
-- 테마별 3D 오브젝트 재질 변경
-- 테마별 폰트 조합 선택
-- 음악 테마 선택
-- 카카오맵 / 네이버지도 연동
-- RSVP 참석 여부 저장
-- 실제 방명록 DB 연동
-- 관리자 편집 화면
-- QR 코드 생성
-- 모바일 공유 최적화
+SPA fallback은 `vercel.json`의 rewrite 설정으로 처리합니다.
 
 ---
 
-## 요약
+## CI
 
-**Wading은 데스크톱과 모바일을 모두 지원하는 3D 웨딩 청첩장 프론트엔드입니다.**
+`.github/workflows/ci.yml`에서 `main` 변경 시 자동으로 다음을 검사합니다.
 
-기본 Ivory Gold 디자인에 더해 여러 컬러 테마를 미리 보고 즉시 선택할 수 있으며, 선택한 테마는 브라우저에 저장됩니다. Three.js 기반 3D 장면과 Motion 애니메이션을 조합해 일반적인 정적 청첩장보다 입체적인 경험을 만드는 것을 목표로 합니다.
+```text
+npm ci
+  ↓
+npm run lint
+  ↓
+npm run build
+```
+
+타입 오류나 프로덕션 빌드 실패가 있는 상태로 변경 사항을 방치하지 않기 위한 최소 검증 단계입니다.
+
+---
+
+## 현재 한계
+
+- 방명록 서버 / DB 기능은 현재 새 디자인에 포함하지 않았습니다.
+- 사진은 아직 실제 웨딩 사진 대신 디자인용 프레임으로 표현합니다.
+- 계좌번호와 이름은 샘플 값입니다.
+- 실제 배포 전에 개인정보와 실제 예식 정보를 반드시 교체해야 합니다.
+
+향후 실제 사진 갤러리, 방명록 DB, RSVP, 참석 여부 응답 기능 등을 붙일 수 있습니다.
