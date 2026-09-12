@@ -17,6 +17,9 @@ function getInitialTheme(): ThemeId {
   if (typeof window === 'undefined') return DEFAULT_THEME;
 
   try {
+    const requested = new URLSearchParams(window.location.search).get('theme');
+    if (isThemeId(requested)) return requested;
+
     const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
     return isThemeId(saved) ? saved : DEFAULT_THEME;
   } catch {
