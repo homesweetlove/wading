@@ -119,12 +119,16 @@ button {
 }
 
 .wedding-theme-panel > header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
   padding: 22px 22px 18px;
   border-bottom: 1px solid #e8e4dd;
+  background: #fbfaf7;
 }
 
 .wedding-theme-panel > header span {
@@ -263,6 +267,86 @@ button {
   color: #d2b474;
   font-size: 7px;
   letter-spacing: 0.12em;
+}
+
+.mini-rose-atelier::before {
+  content: "";
+  position: absolute;
+  inset: 8px 20px;
+  border: 1px solid #cba5ad;
+  border-radius: 50% 50% 0 0;
+  background: #fff8f1;
+}
+
+.mini-rose-atelier > span {
+  z-index: 1;
+  top: 17px;
+  left: calc(50% - 11px);
+  width: 22px;
+  height: 9px;
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+
+.mini-rose-atelier > strong {
+  padding-top: 8px;
+  font-style: italic;
+}
+
+.mini-coastal-postcard::before {
+  content: "";
+  position: absolute;
+  inset: 8px 50% 8px 7px;
+  background: linear-gradient(#dce7ec 40%, #92b8cd 40% 58%, #4d85b0 58% 76%, #2855ae 76%);
+}
+
+.mini-coastal-postcard > strong {
+  left: 50%;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 12px 5px;
+  font-size: 13px;
+}
+
+.mini-coastal-postcard > span {
+  left: auto;
+  right: 9px;
+  top: 9px;
+  width: 9px;
+  height: 12px;
+}
+
+.mini-coastal-postcard > i {
+  left: 75%;
+  width: 28px;
+}
+
+.mini-modern-vow > strong {
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 12px 9px;
+  gap: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+}
+
+.mini-modern-vow > span {
+  inset: auto 9px 12px;
+  height: 25px;
+  opacity: 1;
+}
+
+.mini-modern-vow > i {
+  bottom: 12px;
+  left: auto;
+  right: 27px;
+  width: 1px;
+  height: 25px;
+  border: 0;
+  background: repeating-linear-gradient(#f4f0cb 0 3px, transparent 3px 6px);
+  opacity: 1;
 }
 
 .wedding-theme-card-copy > div {
@@ -1326,8 +1410,1195 @@ button {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Additional collections                                                     */
+/* -------------------------------------------------------------------------- */
+
+.added-experience {
+  color: var(--collection-ink);
+  background: var(--collection-paper);
+  --collection-serif: "Iowan Old Style", Baskerville, "Noto Serif KR", "Times New Roman", serif;
+}
+
+html[data-theme='rose-atelier'],
+.rose-atelier {
+  --collection-paper: #f5e5e3;
+  --collection-ink: #652438;
+  --collection-accent: #8e3049;
+  --collection-line: #cba5ad;
+  background: #f5e5e3;
+}
+
+html[data-theme='coastal-postcard'],
+.coastal-postcard {
+  --collection-paper: #f7f3e8;
+  --collection-ink: #153a79;
+  --collection-accent: #2855ae;
+  --collection-line: #a8b6cc;
+  background: #f7f3e8;
+}
+
+html[data-theme='modern-vow'],
+.modern-vow {
+  --collection-paper: #f4f0cb;
+  --collection-ink: #292b23;
+  --collection-accent: #c04424;
+  --collection-line: #aaa98c;
+  background: #f4f0cb;
+}
+
+.added-experience h2,
+.added-experience h3,
+.added-experience p {
+  word-break: keep-all;
+}
+
+.collection-label,
+.modern-section-number {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+}
+
+.collection-message {
+  font-size: 15px;
+  line-height: 2;
+}
+
+.collection-message p {
+  margin: 8px 0;
+}
+
+.collection-scroll {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+.added-experience :is(a, button):focus-visible,
+.wedding-theme-switcher button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 5px;
+}
+
+.added-experience .wedding-countdown {
+  gap: 8px;
+}
+
+.added-experience .wedding-countdown strong {
+  font-family: var(--collection-serif);
+  font-size: clamp(30px, 4.5vw, 54px);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.added-experience .wedding-countdown span {
+  margin-top: 6px;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.added-experience .location-actions button {
+  min-height: 44px;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border: 1px solid var(--collection-accent);
+  background: transparent;
+  color: var(--collection-ink);
+  font-size: 12px;
+}
+
+.added-experience .account-card {
+  min-width: 0;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--collection-line);
+  text-align: left;
+}
+
+.added-experience .account-role {
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.added-experience .account-card strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.added-experience .account-card p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.added-experience .account-card button {
+  flex-shrink: 0;
+  min-width: 70px;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--collection-line);
+  background: transparent;
+  color: inherit;
+  font-size: 11px;
+}
+
+.rose-hero {
+  padding: 30px 36px 45px;
+  text-align: center;
+}
+
+.rose-masthead,
+.coastal-masthead,
+.modern-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.rose-masthead {
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--collection-line);
+}
+
+.rose-cover {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 580px) 1fr;
+  align-items: center;
+  max-width: 1280px;
+  margin: 52px auto 26px;
+  gap: 30px;
+}
+
+.rose-cover-note {
+  text-align: left;
+}
+
+.rose-cover-note span {
+  display: block;
+  margin-bottom: 25px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+}
+
+.rose-cover-note p {
+  font-family: var(--collection-serif);
+  font-size: clamp(16px, 2vw, 25px);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.rose-cover-note-right {
+  align-self: end;
+  padding-bottom: 50px;
+  text-align: right;
+}
+
+.rose-invitation {
+  position: relative;
+  padding: 32px 24px 52px;
+  border: 1px solid var(--collection-line);
+  border-radius: 47% 47% 4px 4px / 25% 25% 4px 4px;
+  background: #fff8f1;
+  box-shadow: 8px 10px 0 #e9ced0;
+}
+
+.rose-ribbon {
+  display: block;
+  width: 180px;
+  height: 114px;
+  margin: 0 auto 4px;
+  color: var(--collection-accent);
+}
+
+.rose-invitation h1 {
+  margin: 22px 0;
+  font-family: var(--collection-serif);
+  font-size: clamp(58px, 6.5vw, 88px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.rose-invitation h1 em {
+  display: block;
+  margin: 12px 0;
+  font-size: 24px;
+  letter-spacing: 0;
+}
+
+.rose-invite-line {
+  font-family: var(--collection-serif);
+  font-size: 15px;
+  font-style: italic;
+}
+
+.rose-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin: 28px auto 15px;
+}
+
+.rose-date span {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+}
+
+.rose-date strong {
+  padding: 0 25px;
+  border-inline: 1px solid var(--collection-line);
+  font-family: var(--collection-serif);
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.rose-invitation > p:last-child {
+  font-size: 11px;
+}
+
+.rose-body {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.rose-letter {
+  padding: 100px 0 110px;
+  text-align: center;
+  scroll-margin-top: 40px;
+}
+
+.rose-body h2 {
+  margin: 22px 0 32px;
+  font-family: var(--collection-serif);
+  font-size: clamp(30px, 4.2vw, 48px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.05em;
+}
+
+.rose-letter h2 em {
+  font-weight: 400;
+}
+
+.rose-signature {
+  display: block;
+  margin-top: 32px;
+  font-family: var(--collection-serif);
+  font-size: 26px;
+  font-style: italic;
+}
+
+.rose-rendezvous {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 64px 0;
+  border-block: 1px solid var(--collection-line);
+}
+
+.rose-date-block > p:last-of-type,
+.rose-venue > p:last-of-type {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.countdown-rose {
+  margin-top: 30px;
+}
+
+.rose-venue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  border-radius: 50% 50% 0 0;
+  background: #ebd1d4;
+  text-align: center;
+}
+
+.rose-venue .collection-label {
+  margin-top: 24px;
+}
+
+.rose-venue h3 {
+  margin: 16px 0 0;
+  font-family: var(--collection-serif);
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.rose-gratitude {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 110px 0;
+  text-align: center;
+}
+
+.rose-gratitude > svg {
+  margin: 0 auto 18px;
+}
+
+.rose-gratitude > p:last-of-type {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.account-grid-rose {
+  margin-top: 30px;
+}
+
+.rose-footer {
+  padding: 55px 24px 105px;
+  background: #652438;
+  color: #fff2e7;
+  text-align: center;
+}
+
+.rose-footer span {
+  font-family: var(--collection-serif);
+  font-size: clamp(34px, 5vw, 58px);
+  font-style: italic;
+}
+
+.rose-footer p {
+  margin-top: 25px;
+  font-size: 11px;
+}
+
+.coastal-hero {
+  padding: 32px 36px 70px;
+}
+
+.coastal-masthead {
+  padding-bottom: 32px;
+}
+
+.coastal-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--collection-line);
+  box-shadow: 7px 7px 0 #e5e1d4;
+  background: #fffcf3;
+}
+
+.coastal-picture {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.coastal-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+}
+
+.coastal-picture-caption {
+  position: absolute;
+  top: 32px;
+  left: 28px;
+  max-width: 240px;
+  font-family: var(--collection-serif);
+  font-size: clamp(40px, 4.7vw, 64px);
+  font-style: italic;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.coastal-edition {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.coastal-address-side {
+  min-width: 0;
+  padding: 16px 20px 24px 0;
+}
+
+.coastal-postage {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.coastal-postage > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  border: 3px dotted var(--collection-accent);
+  outline: 1px solid var(--collection-line);
+  font-family: var(--collection-serif);
+  font-size: 16px;
+}
+
+.coastal-postage small {
+  font-size: 9px;
+}
+
+.coastal-postage i {
+  display: grid;
+  align-content: center;
+  width: 80px;
+  height: 80px;
+  border: 1px solid var(--collection-line);
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 1.8;
+  text-align: center;
+  transform: rotate(-15deg);
+}
+
+.coastal-address-side h1 {
+  margin: 24px 0;
+  font-family: var(--collection-serif);
+  font-size: clamp(58px, 6.8vw, 92px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.coastal-address-side h1 em {
+  display: block;
+  margin: 14px 0;
+  font-size: 32px;
+}
+
+.coastal-greeting {
+  margin: 24px 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.coastal-address-lines p {
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--collection-line);
+  font-size: 12px;
+}
+
+.coastal-address-side .collection-scroll {
+  margin-top: 24px;
+}
+
+.coastal-body {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.coastal-body h2 {
+  margin: 18px 0;
+  font-family: var(--collection-serif);
+  font-size: clamp(26px, 3.5vw, 40px);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.04em;
+}
+
+.coastal-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  padding: 65px 0 100px;
+  scroll-margin-top: 30px;
+}
+
+.coastal-itinerary {
+  border: 1px solid var(--collection-accent);
+}
+
+.coastal-itinerary-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 28px;
+  background: var(--collection-accent);
+  color: #fffcf3;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+.coastal-itinerary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.coastal-itinerary-grid > div {
+  padding: 36px;
+}
+
+.coastal-itinerary-grid > div + div {
+  border-left: 1px solid var(--collection-line);
+}
+
+.coastal-itinerary-grid > div > p:last-of-type,
+.coastal-gift > div > p:last-child {
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.coastal-counting {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.countdown-coastal {
+  margin-top: 30px;
+}
+
+.coastal-gift {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 70px 0 100px;
+  border-top: 1px solid var(--collection-line);
+}
+
+.coastal-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 65px 24px 105px;
+  border-top: 6px double var(--collection-accent);
+  text-align: center;
+}
+
+.coastal-footer > span {
+  font-family: var(--collection-serif);
+  font-size: clamp(48px, 7vw, 80px);
+  font-style: italic;
+}
+
+.coastal-footer p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.modern-vow {
+  font-family: "Inter", "Pretendard", Arial, sans-serif;
+}
+
+.modern-masthead {
+  padding: 26px 0;
+  border-bottom: 2px solid var(--collection-ink);
+}
+
+.modern-hero {
+  padding: 0 36px;
+}
+
+.modern-headline {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 0 55px;
+}
+
+.modern-headline h1 {
+  margin: 30px 0 45px;
+  font-size: clamp(80px, 14.7vw, 204px);
+  line-height: 0.84;
+  letter-spacing: -0.075em;
+  font-weight: 900;
+}
+
+.modern-headline h1 > span {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  color: var(--collection-accent);
+  font-size: 0.79em;
+}
+
+.modern-asterisk {
+  margin-left: auto;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.modern-hero-bottom {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.modern-hero-bottom > p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.modern-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  min-height: 50px;
+  border-bottom: 2px solid var(--collection-ink);
+  color: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.modern-date-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 22px 0;
+  border-block: 2px solid var(--collection-ink);
+}
+
+.modern-date-band span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.modern-date-band strong {
+  font-size: clamp(24px, 4.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+}
+
+.modern-body {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.modern-story {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 40px;
+  padding: 100px 0;
+}
+
+.modern-story h2,
+.modern-gift h2 {
+  margin: 0 0 32px;
+  font-size: clamp(32px, 4.6vw, 60px);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: -0.06em;
+}
+
+.modern-story h2 span,
+.modern-names span {
+  color: var(--collection-accent);
+}
+
+.modern-names {
+  margin: 32px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.modern-event {
+  padding: 40px 0 70px;
+  scroll-margin-top: 25px;
+}
+
+.modern-ticket {
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  margin-top: 24px;
+  background: var(--collection-accent);
+  color: #fff8df;
+}
+
+.modern-ticket-main {
+  min-width: 0;
+  padding: 42px;
+}
+
+.modern-ticket-main h2 {
+  margin: 34px 0;
+  font-size: clamp(42px, 6.8vw, 88px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.065em;
+}
+
+.modern-ticket-details {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #f0a288;
+}
+
+.modern-ticket-details span,
+.modern-ticket-stub > span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.modern-ticket-details strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modern-ticket-details p {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.modern-ticket .location-actions button {
+  border-color: #fff8df;
+  color: #fff8df;
+}
+
+.modern-ticket-stub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 25px;
+  border-left: 2px dashed #f0a288;
+  text-align: center;
+}
+
+.modern-ticket-stub::before,
+.modern-ticket-stub::after {
+  position: absolute;
+  left: -13px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--collection-paper);
+  content: "";
+}
+
+.modern-ticket-stub::before {
+  top: -12px;
+}
+
+.modern-ticket-stub::after {
+  bottom: -12px;
+}
+
+.modern-ticket-stub > strong {
+  margin-bottom: 25px;
+  font-size: 74px;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.modern-ticket-stub > p {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.modern-barcode {
+  width: 100%;
+  height: 40px;
+  margin: 16px 0 10px;
+  background: repeating-linear-gradient(90deg, #fff8df 0 2px, transparent 2px 5px, #fff8df 5px 6px, transparent 6px 10px, #fff8df 10px 14px, transparent 14px 17px);
+}
+
+.modern-ticket-stub small {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+}
+
+.modern-counting {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  padding: 35px 0;
+  border-block: 2px solid var(--collection-ink);
+}
+
+.modern-counting h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+}
+
+.modern-vow .countdown-modern strong {
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.modern-gift {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 100px 0;
+}
+
+.modern-gift h2 {
+  margin-top: 28px;
+  font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.modern-gift > div > p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.modern-footer {
+  padding: 50px 36px 100px;
+  background: var(--collection-ink);
+  color: var(--collection-paper);
+}
+
+.modern-footer > strong {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: clamp(32px, 8vw, 100px);
+  font-weight: 900;
+  letter-spacing: -0.065em;
+}
+
+.modern-footer > strong span {
+  color: #ef8c63;
+}
+
+.modern-footer p {
+  max-width: 1280px;
+  margin: 22px auto 0;
+  font-size: 11px;
+}
+
+/* -------------------------------------------------------------------------- */
 /* Responsive                                                                 */
 /* -------------------------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .rose-cover {
+    grid-template-columns: minmax(0, 580px);
+    justify-content: center;
+  }
+
+  .rose-cover-note {
+    display: none;
+  }
+
+  .coastal-card {
+    gap: 25px;
+  }
+
+  .coastal-address-side {
+    padding-right: 5px;
+  }
+
+  .coastal-story,
+  .coastal-gift,
+  .modern-gift {
+    gap: 32px;
+  }
+
+  .modern-ticket {
+    grid-template-columns: 1fr 160px;
+  }
+
+  .modern-ticket-main {
+    padding: 30px;
+  }
+
+  .modern-ticket-details {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 680px) {
+  .rose-hero,
+  .coastal-hero {
+    padding: 22px 20px 36px;
+  }
+
+  .rose-masthead,
+  .coastal-masthead,
+  .modern-masthead {
+    font-size: 8px;
+    letter-spacing: 0.06em;
+    gap: 12px;
+  }
+
+  .rose-cover {
+    margin-top: 36px;
+  }
+
+  .rose-invitation {
+    padding: 25px 18px 36px;
+  }
+
+  .rose-invitation h1 {
+    font-size: clamp(54px, 15vw, 72px);
+  }
+
+  .rose-ribbon {
+    width: 155px;
+    height: 98px;
+  }
+
+  .rose-date {
+    gap: 15px;
+  }
+
+  .rose-date strong {
+    padding-inline: 18px;
+  }
+
+  .rose-body,
+  .coastal-body,
+  .modern-body {
+    padding-inline: 24px;
+  }
+
+  .rose-letter,
+  .rose-gratitude {
+    padding-block: 70px;
+  }
+
+  .collection-message {
+    font-size: 14px;
+  }
+
+  .rose-rendezvous,
+  .coastal-story,
+  .coastal-gift,
+  .modern-story,
+  .modern-gift,
+  .modern-counting {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .rose-date-block {
+    text-align: center;
+  }
+
+  .coastal-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .coastal-picture {
+    aspect-ratio: 1 / 1;
+  }
+
+  .coastal-illustration {
+    min-height: 0;
+  }
+
+  .coastal-picture-caption {
+    top: 24px;
+    left: 20px;
+    max-width: 180px;
+    font-size: 42px;
+  }
+
+  .coastal-edition {
+    left: 16px;
+    bottom: 14px;
+    font-size: 7px;
+  }
+
+  .coastal-address-side {
+    padding: 6px 10px 22px;
+  }
+
+  .coastal-postage {
+    margin-bottom: 24px;
+  }
+
+  .coastal-address-side h1 {
+    font-size: 68px;
+  }
+
+  .coastal-itinerary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coastal-itinerary-grid > div {
+    padding: 26px;
+  }
+
+  .coastal-itinerary-grid > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--collection-line);
+  }
+
+  .coastal-itinerary-heading {
+    padding-inline: 24px;
+    font-size: 10px;
+  }
+
+  .coastal-story,
+  .coastal-gift,
+  .coastal-counting {
+    padding-block: 60px;
+  }
+
+  .modern-hero {
+    padding-inline: 20px;
+  }
+
+  .modern-headline {
+    padding-block: 60px 40px;
+  }
+
+  .modern-headline h1 {
+    font-size: clamp(72px, 17vw, 115px);
+    margin-block: 30px;
+  }
+
+  .modern-headline h1 > span {
+    font-size: 0.7em;
+  }
+
+  .modern-hero-bottom {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .modern-date-band {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .modern-date-band strong {
+    font-size: 26px;
+  }
+
+  .modern-date-band span {
+    font-size: 8px;
+  }
+
+  .modern-date-band span:last-child {
+    display: none;
+  }
+
+  .modern-story,
+  .modern-gift {
+    padding-block: 65px;
+  }
+
+  .modern-ticket {
+    grid-template-columns: 1fr;
+  }
+
+  .modern-ticket-main {
+    padding: 28px 24px;
+  }
+
+  .modern-ticket-main h2 {
+    font-size: clamp(35px, 8.5vw, 56px);
+  }
+
+  .modern-ticket-stub {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px;
+    border-left: 0;
+    border-top: 2px dashed #f0a288;
+  }
+
+  .modern-ticket-stub::before,
+  .modern-ticket-stub::after {
+    top: -13px;
+    bottom: auto;
+  }
+
+  .modern-ticket-stub::before {
+    left: -12px;
+  }
+
+  .modern-ticket-stub::after {
+    right: -12px;
+    left: auto;
+  }
+
+  .modern-ticket-stub > strong {
+    grid-column: 1;
+    grid-row: 2 / 4;
+    margin: 0;
+    font-size: 56px;
+  }
+
+  .modern-ticket-stub > svg {
+    justify-self: center;
+  }
+
+  .modern-ticket-stub > p,
+  .modern-ticket-stub > span {
+    margin: 0;
+  }
+
+  .modern-barcode {
+    margin: 0;
+  }
+
+  .modern-counting {
+    padding-block: 30px;
+    text-align: center;
+  }
+
+  .modern-footer {
+    padding-inline: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 @media (max-width: 900px) {
   .paper-information,
