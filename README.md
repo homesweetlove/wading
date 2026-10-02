@@ -1,64 +1,66 @@
+[![English](https://img.shields.io/badge/README-English-24292f?style=for-the-badge)](./README.md) [![한국어](https://img.shields.io/badge/README-%ED%95%9C%EA%B5%AD%EC%96%B4-24292f?style=for-the-badge)](./README.ko.md)
+
 # Wading — Wedding Invitation Experiences
 
-`wading`은 React + TypeScript + Vite로 만든 **반응형 디지털 웨딩 청첩장**입니다.
+`wading` is a **responsive digital wedding invitation** built with React, TypeScript, and Vite.
 
-기존의 3D 오브젝트 중심 화면을 걷어내고, 단순히 색상만 바뀌는 스킨이 아니라 **레이아웃·타이포그래피·애니메이션이 각각 다른 웨딩 경험**을 선택할 수 있도록 다시 구성했습니다.
+Instead of a 3D-object-centered screen or simple color-only skins, the project offers **distinct wedding experiences with different layouts, typography, and animation systems**.
 
-현재 샘플 정보는 `Jihoon & Minji`, `2026.10.24`, `그랜드 하얏트 서울` 기준입니다.
+The current sample content uses `Jihoon & Minji`, `2026.10.24`, and `Grand Hyatt Seoul`.
 
 ---
 
-## 현재 테마
+## Current Themes
 
 ### 1. Paper Letter
 
-정적인 종이 초대장과 편지를 모티브로 한 가장 차분한 테마입니다.
+The calmest theme, inspired by printed invitations and handwritten letters.
 
-- 넓은 여백과 세리프 타이포그래피
-- 편지형 초대 문구
-- 날짜 / 장소를 인쇄물처럼 정리
-- 절제된 fade / reveal 애니메이션
-- 아이보리 / 브라운 계열
+- Generous whitespace and serif typography
+- Letter-style invitation copy
+- Date and venue arranged like printed stationery
+- Restrained fade/reveal animation
+- Ivory and brown palette
 
 ### 2. Garden Film
 
-야외 웨딩 스냅과 필름 앨범을 모티브로 한 테마입니다.
+Inspired by outdoor wedding snapshots and film albums.
 
-- 세이지 그린 기반
-- 필름·폴라로이드 프레임 구조
-- 비대칭 히어로 레이아웃
-- 스크롤 시 프레임이 각기 다른 방향에서 등장
-- 날짜와 장소를 카드형으로 분리
+- Sage-green base
+- Film and Polaroid frame composition
+- Asymmetric hero layout
+- Frames enter from different directions while scrolling
+- Date and venue separated into card-style elements
 
 ### 3. Midnight Ceremony
 
-야간 예식 포스터를 모티브로 한 가장 드라마틱한 테마입니다.
+The most dramatic theme, inspired by night-ceremony posters.
 
-- 딥 네이비 / 골드
-- 초대형 웨딩 타이포그래피
-- 라인 reveal과 어두운 무대형 레이아웃
-- 날짜 / 장소를 이벤트 포스터처럼 표현
-- 데스크톱과 모바일 모두 강한 대비 유지
+- Deep navy and gold
+- Oversized wedding typography
+- Line reveals and dark stage-like composition
+- Date and venue presented like an event poster
+- Strong contrast on both desktop and mobile
 
-우측 하단의 테마 버튼에서 세 디자인을 바로 전환할 수 있습니다.
-선택한 테마는 `localStorage`에 저장되어 재접속해도 유지됩니다.
-
----
-
-## 주요 기능
-
-- PC / 태블릿 / 모바일 반응형 레이아웃
-- 서로 다른 3가지 웨딩 디자인 경험
-- D-Day 실시간 카운트다운
-- 예식 날짜 / 시간 / 장소 안내
-- 네이버 지도 검색 연결
-- 신랑 / 신부 계좌번호 복사
-- 테마 선택값 브라우저 저장
-- Motion 기반 화면 전환 및 스크롤 애니메이션
+Use the theme button at the bottom-right to switch between the three designs.
+The selected theme is saved to `localStorage` and restored on later visits.
 
 ---
 
-## 프로젝트 구조
+## Main Features
+
+- Responsive layouts for desktop, tablet, and mobile
+- Three distinct wedding design experiences
+- Real-time D-Day countdown
+- Ceremony date, time, and venue information
+- Naver Map search link
+- Copyable groom/bride bank-account information
+- Theme preference saved in the browser
+- Motion-based transitions and scroll animations
+
+---
+
+## Project Structure
 
 ```text
 wading/
@@ -68,8 +70,8 @@ wading/
 │  ├─ index.css
 │  ├─ theme.ts
 │  └─ components/
-│     ├─ WeddingExperience.tsx   # 3가지 웨딩 레이아웃
-│     ├─ ThemePicker.tsx         # 테마 미리보기 / 선택
+│     ├─ WeddingExperience.tsx   # Three wedding layouts
+│     ├─ ThemePicker.tsx         # Theme preview / selection
 │     └─ ErrorBoundary.tsx
 ├─ index.html
 ├─ vite.config.ts
@@ -78,38 +80,38 @@ wading/
 └─ README.md
 ```
 
-기존 3D 관련 컴포넌트는 더 이상 메인 화면에서 사용하지 않습니다.
+The previous 3D-related components are no longer used by the main screen.
 
 ---
 
-## 실행
+## Run
 
-Node.js 20 이상을 권장합니다.
+Node.js 20 or newer is recommended.
 
 ```bash
 npm install
 npm run dev
 ```
 
-기본 개발 서버는 다음 주소에서 확인할 수 있습니다.
+The default development server is available at:
 
 ```text
 http://localhost:3000
 ```
 
-### 타입 검사
+### Type Check
 
 ```bash
 npm run lint
 ```
 
-### 프로덕션 빌드
+### Production Build
 
 ```bash
 npm run build
 ```
 
-### 빌드 미리보기
+### Preview the Build
 
 ```bash
 npm run preview
@@ -117,9 +119,9 @@ npm run preview
 
 ---
 
-## 웨딩 정보 수정
+## Editing Wedding Information
 
-현재 샘플 웨딩 정보는 `src/components/WeddingExperience.tsx` 상단의 `wedding` 객체에 모여 있습니다.
+The current sample wedding data is centralized in the `wedding` object near the top of `src/components/WeddingExperience.tsx`.
 
 ```ts
 const wedding = {
@@ -133,60 +135,60 @@ const wedding = {
 };
 ```
 
-실제 사용 시 이 객체에서 다음 내용을 변경하면 됩니다.
+For real use, update:
 
-- 신랑 / 신부 이름
-- 결혼식 날짜와 시간
-- 예식장 및 홀 이름
-- 주소
-- 초대 문구
-- 계좌정보
-
----
-
-## 테마 추가
-
-테마 메타 정보는 `src/theme.ts`에 있습니다.
-
-새로운 디자인을 추가하려면:
-
-1. `ThemeId`에 새 ID 추가
-2. `WEDDING_THEMES`에 미리보기 정보 추가
-3. `WeddingExperience.tsx`에 새로운 레이아웃 컴포넌트 작성
-4. `WeddingExperience`의 theme 분기에 연결
-5. `index.css`에 해당 테마 전용 스타일 추가
-
-즉, 이 프로젝트의 테마는 **색상 토큰만 갈아끼우는 방식이 아니라 화면 구조 자체를 교체하는 방식**입니다.
+- Groom / bride names
+- Wedding date and time
+- Venue and hall name
+- Address
+- Invitation message
+- Bank-account information
 
 ---
 
-## Google AI Studio 관련
+## Adding a Theme
 
-현재 앱은 Gemini 또는 Google AI API를 사용하지 않습니다.
+Theme metadata is defined in `src/theme.ts`.
 
-초기 생성 프로젝트에 남아 있던 `My Google AI Studio App` 문서 제목, `GEMINI_API_KEY` Vite 주입 설정, AI Studio용 `.env.example`, `metadata.json`은 제거했습니다.
+To add a new design:
 
-청첩장 실행에 별도의 AI API 키나 환경변수는 필요하지 않습니다.
+1. Add a new ID to `ThemeId`.
+2. Add preview metadata to `WEDDING_THEMES`.
+3. Create the new layout component in `WeddingExperience.tsx`.
+4. Connect it to the theme branch in `WeddingExperience`.
+5. Add theme-specific styles to `index.css`.
+
+Themes in this project do **not** merely swap color tokens; they replace the screen structure itself.
 
 ---
 
-## 배포
+## Google AI Studio
 
-Vercel 기준:
+The current app does not use Gemini or the Google AI API.
+
+The `My Google AI Studio App` document title, `GEMINI_API_KEY` Vite injection, AI Studio `.env.example`, and `metadata.json` left over from the initial generated project were removed.
+
+No AI API key or environment variable is required to run the invitation.
+
+---
+
+## Deployment
+
+For Vercel:
 
 - Framework: `Vite`
 - Build Command: `npm run build`
 - Output Directory: `dist`
 
-`main`에 push하면 연결된 Vercel 프로젝트에서 자동 배포하도록 사용할 수 있습니다.
+Pushing to `main` can be used to trigger automatic deployment in the connected Vercel project.
 
-SPA fallback은 `vercel.json`의 rewrite 설정으로 처리합니다.
+SPA fallback is handled by the rewrite configuration in `vercel.json`.
 
 ---
 
 ## CI
 
-`.github/workflows/ci.yml`에서 `main` 변경 시 자동으로 다음을 검사합니다.
+`.github/workflows/ci.yml` runs the following checks when `main` changes:
 
 ```text
 npm ci
@@ -196,15 +198,15 @@ npm run lint
 npm run build
 ```
 
-타입 오류나 프로덕션 빌드 실패가 있는 상태로 변경 사항을 방치하지 않기 위한 최소 검증 단계입니다.
+This is the minimum verification layer for catching type errors and production-build failures.
 
 ---
 
-## 현재 한계
+## Current Limitations
 
-- 방명록 서버 / DB 기능은 현재 새 디자인에 포함하지 않았습니다.
-- 사진은 아직 실제 웨딩 사진 대신 디자인용 프레임으로 표현합니다.
-- 계좌번호와 이름은 샘플 값입니다.
-- 실제 배포 전에 개인정보와 실제 예식 정보를 반드시 교체해야 합니다.
+- Guestbook server/database features are not included in the current redesign.
+- Photos are currently represented by design frames rather than real wedding photos.
+- Account numbers and names are sample values.
+- Replace personal information and ceremony details before a real deployment.
 
-향후 실제 사진 갤러리, 방명록 DB, RSVP, 참석 여부 응답 기능 등을 붙일 수 있습니다.
+Future additions may include a real photo gallery, guestbook database, RSVP, and attendance responses.
